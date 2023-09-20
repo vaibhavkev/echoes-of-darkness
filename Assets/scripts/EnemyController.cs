@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
     public Transform playerTransform;
     NavMeshAgent agent;
     private Animator animator;
+    [SerializeField] private PlayerHealthManager healthManager;
+    private float distance;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -17,8 +19,9 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(playerTransform.position, transform.position);
         agent.destination = playerTransform.position;
-        if (distance < 1)
+        if (distance < 2)
         {
+            attack();
             animator.SetBool("is_running", false);
             FaceTarget();
         }
@@ -32,5 +35,9 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+    public void attack()
+    {
+        healthManager.PlayerHealth = healthManager.PlayerHealth - 0.5f;
     }
 }
