@@ -7,9 +7,10 @@ public class EnemyController : MonoBehaviour
 {
     public Transform playerTransform;
     NavMeshAgent agent;
-
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
     void Update()
@@ -18,7 +19,12 @@ public class EnemyController : MonoBehaviour
         agent.destination = playerTransform.position;
         if (distance < 1)
         {
+            animator.SetBool("is_running", false);
             FaceTarget();
+        }
+        else
+        {
+            animator.SetBool("is_running", true);
         }
     }
     void FaceTarget()
