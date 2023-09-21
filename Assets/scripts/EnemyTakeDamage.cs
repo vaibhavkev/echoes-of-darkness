@@ -17,7 +17,7 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            Debug.Log("Mouse 0 ");
+
         }
     }
 }
