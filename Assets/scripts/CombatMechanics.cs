@@ -11,7 +11,7 @@ public class CombatMechanics : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        attack1timer = 2.1f;
+        attack1timer = 4f;
     }
 
     // Update is called once per frame
