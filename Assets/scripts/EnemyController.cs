@@ -10,8 +10,10 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
     [SerializeField] private PlayerHealthManager healthManager;
     private float distance;
+    private Rigidbody rb;
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -19,11 +21,13 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(playerTransform.position, transform.position);
         agent.destination = playerTransform.position;
-        if (distance < 2)
+        if (distance < 4)
         {
             attack();
             animator.SetBool("is_running", false);
             FaceTarget();
+            rb.velocity = Vector3.zero;
+            
         }
         else
         {

@@ -12,6 +12,7 @@ public class CombatMechanics : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         attack1timer = 2f;
+        timer = 3f;
     }
 
     // Update is called once per frame
@@ -37,13 +38,12 @@ public class CombatMechanics : MonoBehaviour
         {
 
             //Debug.Log("Mouse 0 ");
-            animator.SetBool("attack", true);
-            timer = 0f;
-            //while (timer < attack1timer)
-            //{
-             //   timer += Time.deltaTime;
-            //}
-            //animator.SetBool("attack", false);
+            
+            if(animator.GetBool("attack") == false)
+            {
+                animator.SetBool("attack", true);
+                timer = 0f;
+            }
         }
     }
 }

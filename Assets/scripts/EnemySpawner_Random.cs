@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (timer > idealtime)
+       /* if (timer > idealtime)
         {
             timer = 0;
             SpawnEnemy();
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             timer += Time.deltaTime;
-        }
+        } */
     }
     private void OnTriggerEnter(Collider other)
     {
