@@ -42,6 +42,7 @@ public class CombatMechanics : MonoBehaviour
             if(animator.GetBool("attack") == false)
             {
                 animator.SetBool("attack", true);
+                FindObjectOfType<audiomanager>().play("punch1");
                 timer = 0f;
             }
         }
