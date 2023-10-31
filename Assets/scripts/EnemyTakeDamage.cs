@@ -4,20 +4,52 @@ using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
-    //[SerializeField] private Transform 
-    private Transform enemy_body;
-     // Start is called before the first frame update
+    public float maxHealth = 100f;
+    private float currentHealth;
+    // Reference to the player GameObject
+    public GameObject player;
+    // Range within which the enemy can be attacked
+    public float attackRange = 2f;
+    // Reference to the player's animator
+    private Animator playerAnimator;
+
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        playerAnimator = player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (IsPlayerAttacking() && IsPlayerInRange())
         {
-
+            TakeDamage(10f); // Adjust the damage value as needed
         }
+    }
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        // Ensure health doesn't go below zero.
+        currentHealth = Mathf.Max(currentHealth, 0);
+
+        // Check for death
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private bool IsPlayerInRange()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        return distanceToPlayer <= attackRange;
+    }
+
+    private bool IsPlayerAttacking()
+    {
+        Debug.Log(playerAnimator.GetBool("attack"));
+        // Assuming you have a trigger parameter "IsAttacking" in the player's animator
+        return playerAnimator.GetBool("attack");
     }
 }
