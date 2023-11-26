@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PlayerHealthManager healthManager;
     private float distance;
     private Rigidbody rb;
+    [SerializeField] private CombatMechanics combatMechanics;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,5 +44,6 @@ public class EnemyController : MonoBehaviour
     public void attack()
     {
         healthManager.PlayerHealth = healthManager.PlayerHealth - 0.03f;
+        FindObjectOfType<audiomanager>().play("enemy_attack");
     }
 }

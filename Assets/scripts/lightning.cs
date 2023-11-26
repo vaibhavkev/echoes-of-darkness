@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class lightning : MonoBehaviour
 {
-    public float lightningDuration = 0.05f;
-    public float lightningDelay = 0.5f;
+    public float lightningDuration = 0.1f;
+    public float lightningDelay = 2f;
     public float lightningIntensity = 1f;
     public float lightningRange = 10f;
     public GameObject lightningTarget;
