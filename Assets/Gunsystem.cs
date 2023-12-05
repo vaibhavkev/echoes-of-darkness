@@ -20,8 +20,8 @@ public class Gunsystem : MonoBehaviour
     public LayerMask whatIsEnemy;
 
     //Graphics
-  //  public CamShake camShake;
-  //  public float camShakeMagnitude, camShakeDuration;
+ //   public CamShake camShake;
+ //   public float camShakeMagnitude, camShakeDuration;
 
     private void Awake()
     {
@@ -69,7 +69,7 @@ public class Gunsystem : MonoBehaviour
         }
 
         //ShakeCamera
- //       camShake.Shake(camShakeDuration, camShakeMagnitude);
+  //      camShake.Shake(camShakeDuration, camShakeMagnitude);
 
         //Graphics
 //        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
