@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private CombatMechanics combatMechanics;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
