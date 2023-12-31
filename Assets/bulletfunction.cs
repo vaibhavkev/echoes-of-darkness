@@ -20,7 +20,7 @@ public class bulletfunction : MonoBehaviour
 
             if (distance < destroyDistance)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }

@@ -8,6 +8,7 @@ TagManager:
   - zombie
   - Enemyspawn
   - key
+  - Bullets
   layers:
   - Default
   - TransparentFX

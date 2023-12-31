@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
     public float maxHealth = 100f;
-    private float currentHealth;
+    public float currentHealth;
     // Reference to the player GameObject
     public GameObject player;
     // Range within which the enemy can be attacked
@@ -24,9 +25,18 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (IsPlayerAttacking() && IsPlayerInRange())
         {
-            TakeDamage(10f); // Adjust the damage value as needed
+            TakeDamage(0f); // Adjust the damage value as needed
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullets")
+        {
+            TakeDamage(10f);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
