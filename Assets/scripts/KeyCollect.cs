@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class KeyCollect : MonoBehaviour
 {
-    private int keyno;
+    public int keyno;
     public Text score;
     // Start is called before the first frame update
     void Start()

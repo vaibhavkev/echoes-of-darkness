@@ -8,7 +8,9 @@ public class GameOver : MonoBehaviour
     public Slider slider;
     public GameObject player;
     public GameObject Panel;
+    public GameObject WinPanel;
     public float timeValue = 180;
+    public KeyCollect keyn;
     // Start is called before the first frame update
     void CheckDeath()
     {
@@ -21,6 +23,18 @@ public class GameOver : MonoBehaviour
             if (Panel.activeInHierarchy == false){
                 Panel.SetActive(true);
             }
+        }
+        if((slider.value >0 && timeValue == 0)|| keyn.keyno == 5)
+        {
+            if (player.activeInHierarchy == true)
+            {
+                player.SetActive(false);
+            }
+            if (WinPanel.activeInHierarchy == false)
+            {
+                WinPanel.SetActive(true);
+            }
+
         }
     }
 
