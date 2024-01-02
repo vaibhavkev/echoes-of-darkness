@@ -10,7 +10,7 @@ public class EnemyTakeDamage : MonoBehaviour
     // Reference to the player GameObject
     public GameObject player;
     // Range within which the enemy can be attacked
-    public float attackRange = 2f;
+    public float attackRange = 1.3f;
     // Reference to the player's animator
     private Animator playerAnimator;
 
@@ -33,7 +33,8 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullets")
         {
-            TakeDamage(10f);
+            TakeDamage(20f);
+            Destroy(other.gameObject);
         }
     }
 
