@@ -24,6 +24,7 @@ public class gun : MonoBehaviour
     }
     void shoot()
     {
+        FindObjectOfType<audiomanager>().play("shoot");
         Debug.Log("shot");
         GameObject bullet1 = Instantiate(bullet, bulletpoint.transform.position, transform.rotation);
         bullet1.GetComponent<Rigidbody>().AddForce(transform.forward * 6000);
