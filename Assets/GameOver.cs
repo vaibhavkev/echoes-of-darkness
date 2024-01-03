@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
             if (Panel.activeInHierarchy == false){
                 Panel.SetActive(true);
             }
+            Cursor.lockState = CursorLockMode.None;
         }
         if((slider.value >0 && timeValue == 0)|| keyn.keyno == 5)
         {
