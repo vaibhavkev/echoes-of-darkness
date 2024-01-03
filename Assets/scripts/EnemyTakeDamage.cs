@@ -33,7 +33,7 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullets")
         {
-            TakeDamage(20f);
+            TakeDamage(35f);
             Destroy(other.gameObject);
         }
     }
