@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 292292733}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1367004256
@@ -3514,6 +3514,7 @@ GameObject:
   - component: {fileID: 1420295572}
   - component: {fileID: 1420295571}
   - component: {fileID: 1420295573}
+  - component: {fileID: 1420295574}
   m_Layer: 0
   m_Name: mouse-click
   m_TagString: Untagged
@@ -3642,6 +3643,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edc25f221d387a64e9f32002c10765d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1420295574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420295570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246679a9a38908c44af44195e503927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1435686486
